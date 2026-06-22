@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "synthflow": {
+      "type": "http",
+      "url": "https://mcp.synthflow.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SYNTHFLOW_API_KEY}"
+      }
+    }
+  }
+}

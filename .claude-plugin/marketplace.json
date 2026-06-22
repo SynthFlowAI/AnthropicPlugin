@@ -1,0 +1,17 @@
+{
+  "name": "synthflow",
+  "owner": {
+    "name": "Synthflow",
+    "email": "fionn@synthflow.ai"
+  },
+  "description": "Synthflow integrations for Claude Code.",
+  "plugins": [
+    {
+      "name": "synthflow-mcp",
+      "source": "./plugins/synthflow-mcp",
+      "description": "Connects Claude Code to the Synthflow hosted MCP server (https://mcp.synthflow.ai/mcp) for managing AI voice agents, phone numbers, calls, and workflows.",
+      "category": "integrations",
+      "keywords": ["synthflow", "mcp", "voice", "ai-agents", "telephony"]
+    }
+  ]
+}

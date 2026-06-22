@@ -1,0 +1,14 @@
+{
+  "name": "synthflow-mcp",
+  "displayName": "Synthflow MCP",
+  "description": "Connects Claude Code to the Synthflow AI voice-agent platform through its hosted MCP server. Lets Claude manage assistants, phone numbers, calls, and workflows.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Synthflow",
+    "email": "fionn@synthflow.ai"
+  },
+  "homepage": "https://docs.synthflow.ai/mcp-server",
+  "repository": "https://github.com/SynthFlowAI/AnthropicPlugin",
+  "license": "MIT",
+  "keywords": ["synthflow", "mcp", "voice", "ai-agents", "telephony", "integration"]
+}
