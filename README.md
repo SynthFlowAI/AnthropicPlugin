@@ -1,6 +1,6 @@
-# Synthflow AI plugin
+# Synthflow AI - Claude Code/Cowork plugin
 
-Official Synthflow plugin for AI clients. Manage your AI voice agents directly from your AI coding tool.
+Official Synthflow plugin for Claude Code and Claude Cowork. Manage your AI voice agents directly from Claude.
 
 ## Installation
 
@@ -39,23 +39,6 @@ claude mcp add --transport http synthflow https://mcp.synthflow.ai/mcp \
 ```
 
 Substitute your region's URL from the table above.
-
-## How to develop
-
-1. Clone and run the plugin without installing:
-    ```bash
-    git clone https://github.com/SynthFlowAI/AnthropicPlugin
-    cd AnthropicPlugin
-    claude --plugin-dir ./plugins/synthflow-mcp
-    ```
-
-2. Validate the marketplace and plugin manifests:
-    ```bash
-    claude plugin validate . --strict
-    claude plugin validate ./plugins/synthflow-mcp --strict
-    ```
-
-See the [plugin README](./plugins/synthflow-mcp) for configuration details and troubleshooting.
 
 ## Features
 
@@ -99,6 +82,7 @@ Skills activate automatically when their description matches your request (e.g. 
 
 - [Synthflow connector for Claude & Claude Code](https://docs.synthflow.ai/anthropic)
 - [Synthflow MCP server](https://docs.synthflow.ai/mcp-server)
+- [Plugin configuration and troubleshooting](./plugins/synthflow-mcp)
 
 ## License
 
