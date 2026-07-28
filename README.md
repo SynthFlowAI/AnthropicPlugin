@@ -1,41 +1,89 @@
-# Synthflow MCP Marketplace
+# Synthflow AI - Claude Code/Cowork plugin
 
-A Claude Code [plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces) that distributes Synthflow integrations.
+Official Synthflow plugin for Claude Code and Claude Cowork. Manage your AI voice agents directly from Claude.
 
-## Plugins
+## Installation
 
-| Plugin | Description |
-|--------|-------------|
-| [`synthflow-mcp`](./plugins/synthflow-mcp) | Connects Claude Code to the Synthflow hosted MCP server (OAuth) for managing AI voice agents, phone numbers, calls, and workflows. Includes call-review and prompt-review skills and a docs-search connector. |
+### Claude Code
 
-## Install
+1. Add the marketplace and install the plugin:
+    ```
+    /plugin marketplace add SynthFlowAI/AnthropicPlugin
+    /plugin install synthflow-mcp@synthflow
+    ```
+    When you enable the plugin, Claude Code prompts for your workspace region's MCP URL — press Enter to accept the Global default, or paste your region's URL (see [Regions](#regions)).
 
-Add this marketplace, then install the plugin:
+2. Authenticate via OAuth:
+    ```
+    /mcp
+    ```
+    Select the `synthflow` server and press Enter, then follow the browser prompts to log into Synthflow, pick your workspace, and click **Allow access**.
 
-```
-/plugin marketplace add SynthFlowAI/AnthropicPlugin
-/plugin install synthflow-mcp@synthflow
-```
+## Regions
 
-For local testing, point at the directory instead:
+Synthflow runs three regional MCP endpoints. The server URL and your workspace must be in the same region — a mismatch stops the connection from working. Find your region under **Admin → Workspace Settings → Preferences → Customer Region**.
 
-```
-/plugin marketplace add ./
-/plugin install synthflow-mcp@synthflow
-```
+| Region | MCP URL |
+|--------|---------|
+| Global | `https://mcp.synthflow.ai/mcp` |
+| United States | `https://mcp.us.synthflow.ai/mcp` |
+| European Union | `https://mcp.eu.synthflow.ai/mcp` |
 
-Each plugin has its own setup steps — see its README. The `synthflow-mcp` plugin prompts for your workspace region's MCP URL at enable time and authenticates with OAuth: run `/mcp` and sign in to Synthflow ([setup](./plugins/synthflow-mcp#setup)).
+## Headless / CI
 
-## Develop
-
-Test a plugin without installing it:
-
-```bash
-claude --plugin-dir ./plugins/synthflow-mcp
-```
-
-Validate the marketplace and plugin manifests:
+Environments without a browser can connect with a Synthflow API key instead (generate one in **Admin → Workspace Settings → API Keys**):
 
 ```bash
-claude plugin validate .
+claude mcp add --transport http synthflow https://mcp.synthflow.ai/mcp \
+  --header "Authorization: Bearer $SYNTHFLOW_API_KEY"
 ```
+
+Substitute your region's URL from the table above.
+
+## Features
+
+This plugin gives Claude access to Synthflow tools across these categories:
+
+- **Agents** — create, update, version, publish, and roll back voice agents
+- **Calls** — place test calls, review transcripts, and pull call analytics
+- **Knowledge bases** — create knowledge bases from files or URLs and attach them to agents
+- **Actions** — build and test API integrations agents can call mid-conversation
+- **Phone numbers** — manage numbers, phone books, and contacts
+- **Simulations** — run scripted test scenarios against agents before publishing
+- **Webhook logs** — inspect integration request/response payloads when debugging
+- **Documentation** — search the Synthflow docs, no sign-in required
+
+### Bundled skills
+
+The plugin also ships task-specific skills that Claude loads on demand to follow Synthflow best practices:
+
+- **call-review** — audits an agent's recent calls against a problem checklist (unresolved outcomes, repetition, dropout, compliance risks) and reports flagged calls with transcript evidence.
+- **prompt-review** — reviews a voice-agent prompt before deployment: contradictions, missing context, tool/action alignment, escalation gaps, compliance risk, and regression risk.
+
+Skills activate automatically when their description matches your request (e.g. "review my calls", "audit this prompt before I publish"), so you generally don't need to invoke them by name.
+
+## Example usage
+
+```
+> List my agents and summarize what each one does
+> Create a new inbound sales qualification agent and publish it
+
+> Show me the last 20 calls and flag any with negative sentiment
+> Review the last 100 calls for my support agent and surface problems
+
+> Review this prompt before I publish it
+> Compare the draft against the live version — any regression risk?
+
+> Create a knowledge base from these sources, then attach it to my support agent
+> Run a simulation where a prospect asks about pricing and implementation time
+```
+
+## Documentation
+
+- [Synthflow connector for Claude & Claude Code](https://docs.synthflow.ai/anthropic)
+- [Synthflow MCP server](https://docs.synthflow.ai/mcp-server)
+- [Plugin configuration and troubleshooting](./plugins/synthflow-mcp)
+
+## License
+
+MIT
