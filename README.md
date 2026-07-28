@@ -6,7 +6,7 @@ A Claude Code [plugin marketplace](https://code.claude.com/docs/en/plugin-market
 
 | Plugin | Description |
 |--------|-------------|
-| [`synthflow-mcp`](./plugins/synthflow-mcp) | Connects Claude Code to the Synthflow hosted MCP server (OAuth) for managing AI voice agents, phone numbers, calls, and workflows. |
+| [`synthflow-mcp`](./plugins/synthflow-mcp) | Connects Claude Code to the Synthflow hosted MCP server (OAuth) for managing AI voice agents, phone numbers, calls, and workflows. Includes call-review and prompt-review skills and a docs-search connector. |
 
 ## Install
 

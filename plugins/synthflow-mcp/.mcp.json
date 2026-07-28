@@ -3,6 +3,10 @@
     "synthflow": {
       "type": "http",
       "url": "${user_config.mcp_url}"
+    },
+    "synthflow-docs": {
+      "type": "http",
+      "url": "https://docs.synthflow.ai/_mcp/server"
     }
   }
 }
