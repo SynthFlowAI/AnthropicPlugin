@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "synthflow-mcp",
   "displayName": "Synthflow MCP",
-  "description": "Connects Claude Code to the Synthflow AI voice-agent platform through its hosted MCP server. Lets Claude manage assistants, phone numbers, calls, and workflows.",
-  "version": "1.1.0",
+  "description": "Connects Claude Code to the Synthflow AI voice-agent platform through its hosted MCP server, with skills for reviewing calls and auditing agent prompts, plus a docs-search connector.",
+  "version": "1.2.0",
   "author": {
     "name": "Synthflow",
     "email": "fionn@synthflow.ai"

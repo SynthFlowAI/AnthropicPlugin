@@ -9,7 +9,7 @@
     {
       "name": "synthflow-mcp",
       "source": "./plugins/synthflow-mcp",
-      "description": "Connects Claude Code to the Synthflow hosted MCP server (https://mcp.synthflow.ai/mcp) for managing AI voice agents, phone numbers, calls, and workflows.",
+      "description": "Connects Claude Code to the Synthflow hosted MCP server (https://mcp.synthflow.ai/mcp) for managing AI voice agents, phone numbers, calls, and workflows, with skills for call review and prompt review plus a docs-search connector.",
       "category": "integrations",
       "keywords": ["synthflow", "mcp", "voice", "ai-agents", "telephony"]
     }
