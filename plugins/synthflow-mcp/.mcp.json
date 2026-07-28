@@ -2,7 +2,7 @@
   "mcpServers": {
     "synthflow": {
       "type": "http",
-      "url": "${user_config.mcp_url}"
+      "url": "https://mcp.synthflow.ai/mcp"
     },
     "synthflow-docs": {
       "type": "http",
