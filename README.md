@@ -11,7 +11,7 @@ Official Synthflow plugin for Claude Code and Claude Cowork. Manage your AI voic
     /plugin marketplace add SynthFlowAI/AnthropicPlugin
     /plugin install synthflow-mcp@synthflow
     ```
-    When you enable the plugin, Claude Code prompts for your workspace region's MCP URL — press Enter to accept the Global default, or paste your region's URL (see [Regions](#regions)).
+    The plugin connects to the Global endpoint. If your workspace runs in the US or EU region, see [Regions](#regions).
 
 2. Authenticate via OAuth:
     ```
@@ -28,6 +28,14 @@ Synthflow runs three regional MCP endpoints. The server URL and your workspace m
 | Global | `https://mcp.synthflow.ai/mcp` |
 | United States | `https://mcp.us.synthflow.ai/mcp` |
 | European Union | `https://mcp.eu.synthflow.ai/mcp` |
+
+The plugin's bundled connector uses the Global endpoint. For a US or EU workspace, add the server with your region's URL instead:
+
+```bash
+claude mcp add --transport http synthflow https://mcp.eu.synthflow.ai/mcp
+```
+
+Then authenticate via `/mcp` as usual. You can keep the plugin enabled for its skills — its Global connector will simply show as unauthenticated, which is safe to ignore.
 
 ## Headless / CI
 

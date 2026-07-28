@@ -23,13 +23,19 @@ Synthflow runs three regional MCP endpoints. **The server URL and your workspace
 | United States | `https://mcp.us.synthflow.ai/mcp` |
 | European Union | `https://mcp.eu.synthflow.ai/mcp` |
 
-When you enable the plugin, Claude Code prompts for the server URL (defaulting to Global) — paste your region's URL there. To change it later, re-run the prompt from `/plugin` or edit `pluginConfigs` in `~/.claude/settings.json`.
+The plugin's bundled connector uses the Global endpoint. For a US or EU workspace, add the server with your region's URL instead:
+
+```bash
+claude mcp add --transport http synthflow https://mcp.eu.synthflow.ai/mcp
+```
+
+Then authenticate via `/mcp` as usual. You can keep the plugin enabled for its skills — its Global connector will simply show as unauthenticated, which is safe to ignore.
 
 ## Setup
 
 The server authenticates with **OAuth** — you sign in through Synthflow and select a workspace, so there is no API key to copy or manage by hand.
 
-1. Install and enable the plugin, entering your region's MCP URL when prompted.
+1. Install and enable the plugin (Global-region workspaces work out of the box; US/EU, see [Regions](#regions)).
 2. Run `/mcp`, select the `synthflow` server, and choose **Authenticate**. A browser window opens to Synthflow's sign-in, where you pick the workspace and click **Allow access**.
 3. `/mcp` should now show the server as connected, with its tools listed.
 
@@ -53,7 +59,7 @@ The plugin ships two remote MCP server definitions (`.mcp.json`):
   "mcpServers": {
     "synthflow": {
       "type": "http",
-      "url": "${user_config.mcp_url}"
+      "url": "https://mcp.synthflow.ai/mcp"
     },
     "synthflow-docs": {
       "type": "http",
@@ -63,7 +69,7 @@ The plugin ships two remote MCP server definitions (`.mcp.json`):
 }
 ```
 
-- **`synthflow`** — the workspace server. `${user_config.mcp_url}` is the region URL you chose at enable time (declared in `plugin.json` under `userConfig`, defaulting to the Global endpoint). Claude Code detects that the server requires OAuth and handles the sign-in flow via `/mcp`. Tools added to the hosted server appear automatically — no plugin update required.
+- **`synthflow`** — the workspace server (Global endpoint — see [Regions](#regions) for US/EU workspaces). Claude Code detects that the server requires OAuth and handles the sign-in flow via `/mcp`. Tools added to the hosted server appear automatically — no plugin update required. The URL is deliberately static: config placeholders like `${user_config.*}` only resolve inside Claude Code and break the connector on other Claude surfaces.
 - **`synthflow-docs`** — searches the official docs at [docs.synthflow.ai](https://docs.synthflow.ai) via a `searchDocs` tool. No sign-in needed, so Claude can look up Synthflow features and setup steps even before you authenticate.
 
 ## Troubleshooting

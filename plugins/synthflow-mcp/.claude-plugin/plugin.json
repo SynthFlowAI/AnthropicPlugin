@@ -3,7 +3,7 @@
   "name": "synthflow-mcp",
   "displayName": "Synthflow MCP",
   "description": "Connects Claude Code to the Synthflow AI voice-agent platform through its hosted MCP server, with skills for reviewing calls and auditing agent prompts, plus a docs-search connector.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": {
     "name": "Synthflow",
     "email": "fionn@synthflow.ai"
@@ -11,13 +11,5 @@
   "homepage": "https://docs.synthflow.ai/anthropic",
   "repository": "https://github.com/SynthFlowAI/AnthropicPlugin",
   "license": "MIT",
-  "keywords": ["synthflow", "mcp", "voice", "ai-agents", "telephony", "integration"],
-  "userConfig": {
-    "mcp_url": {
-      "type": "string",
-      "title": "Synthflow MCP server URL",
-      "description": "Use the endpoint matching your workspace region (Admin → Workspace Settings → Preferences → Customer Region): Global https://mcp.synthflow.ai/mcp · US https://mcp.us.synthflow.ai/mcp · EU https://mcp.eu.synthflow.ai/mcp",
-      "default": "https://mcp.synthflow.ai/mcp"
-    }
-  }
+  "keywords": ["synthflow", "mcp", "voice", "ai-agents", "telephony", "integration"]
 }
