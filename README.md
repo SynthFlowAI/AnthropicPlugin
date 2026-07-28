@@ -9,7 +9,7 @@ Official Synthflow plugin for Claude Code and Claude Cowork. Manage your AI voic
 1. Add the marketplace and install the plugin:
     ```
     /plugin marketplace add SynthFlowAI/AnthropicPlugin
-    /plugin install synthflow-mcp@synthflow
+    /plugin install synthflow@synthflow
     ```
     The plugin connects to the Global endpoint. If your workspace runs in the US or EU region, see [Regions](#regions).
 
@@ -90,7 +90,7 @@ Skills activate automatically when their description matches your request (e.g. 
 
 - [Synthflow connector for Claude & Claude Code](https://docs.synthflow.ai/anthropic)
 - [Synthflow MCP server](https://docs.synthflow.ai/mcp-server)
-- [Plugin configuration and troubleshooting](./plugins/synthflow-mcp)
+- [Plugin configuration and troubleshooting](./plugins/synthflow)
 
 ## License
 

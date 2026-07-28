@@ -1,4 +1,4 @@
-# Synthflow MCP
+# Synthflow plugin
 
 Connects Claude Code to the [Synthflow](https://synthflow.ai) AI voice-agent platform through its hosted MCP server.
 
@@ -11,7 +11,7 @@ Once connected, Claude can call Synthflow tools directly — managing assistants
 | `call-review` | Audits the last 100 calls for an agent against a problem checklist (unresolved outcomes, repetition, dropout, compliance risks) and reports flagged calls with evidence. |
 | `prompt-review` | Reviews a voice-agent prompt before deployment: contradictions, missing context, tool/action alignment, escalation gaps, compliance risk, and regression risk. |
 
-Claude invokes these automatically when the task fits; you can also run them explicitly, e.g. `/synthflow-mcp:call-review`.
+Claude invokes these automatically when the task fits; you can also run them explicitly, e.g. `/synthflow:call-review`.
 
 ## Regions
 
