@@ -1,14 +1,23 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "synthflow-mcp",
   "displayName": "Synthflow MCP",
   "description": "Connects Claude Code to the Synthflow AI voice-agent platform through its hosted MCP server. Lets Claude manage assistants, phone numbers, calls, and workflows.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Synthflow",
     "email": "fionn@synthflow.ai"
   },
-  "homepage": "https://docs.synthflow.ai/mcp-server",
+  "homepage": "https://docs.synthflow.ai/anthropic",
   "repository": "https://github.com/SynthFlowAI/AnthropicPlugin",
   "license": "MIT",
-  "keywords": ["synthflow", "mcp", "voice", "ai-agents", "telephony", "integration"]
+  "keywords": ["synthflow", "mcp", "voice", "ai-agents", "telephony", "integration"],
+  "userConfig": {
+    "mcp_url": {
+      "type": "string",
+      "title": "Synthflow MCP server URL",
+      "description": "Use the endpoint matching your workspace region (Admin → Workspace Settings → Preferences → Customer Region): Global https://mcp.synthflow.ai/mcp · US https://mcp.us.synthflow.ai/mcp · EU https://mcp.eu.synthflow.ai/mcp",
+      "default": "https://mcp.synthflow.ai/mcp"
+    }
+  }
 }
