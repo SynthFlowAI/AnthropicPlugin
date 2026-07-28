@@ -4,6 +4,15 @@ Connects Claude Code to the [Synthflow](https://synthflow.ai) AI voice-agent pla
 
 Once connected, Claude can call Synthflow tools directly — managing assistants, phone numbers, calls, knowledge bases, actions, and simulations from your editor.
 
+## Skills
+
+| Skill | What it does |
+|-------|--------------|
+| `call-review` | Audits the last 100 calls for an agent against a problem checklist (unresolved outcomes, repetition, dropout, compliance risks) and reports flagged calls with evidence. |
+| `prompt-review` | Reviews a voice-agent prompt before deployment: contradictions, missing context, tool/action alignment, escalation gaps, compliance risk, and regression risk. |
+
+Claude invokes these automatically when the task fits; you can also run them explicitly, e.g. `/synthflow-mcp:call-review`.
+
 ## Regions
 
 Synthflow runs three regional MCP endpoints. **The server URL and your workspace must be in the same region** — a mismatch (e.g. the EU URL with a US workspace) stops the connection from working. Find your region under **Admin → Workspace Settings → Preferences → Customer Region**.
@@ -37,7 +46,7 @@ Substitute your region's URL from the table above. Claude Code deduplicates serv
 
 ## How it works
 
-The plugin ships a single remote MCP server definition (`.mcp.json`):
+The plugin ships two remote MCP server definitions (`.mcp.json`):
 
 ```json
 {
@@ -45,12 +54,17 @@ The plugin ships a single remote MCP server definition (`.mcp.json`):
     "synthflow": {
       "type": "http",
       "url": "${user_config.mcp_url}"
+    },
+    "synthflow-docs": {
+      "type": "http",
+      "url": "https://docs.synthflow.ai/_mcp/server"
     }
   }
 }
 ```
 
-`${user_config.mcp_url}` is the region URL you chose at enable time (declared in `plugin.json` under `userConfig`, defaulting to the Global endpoint). Claude Code detects that the server requires OAuth and handles the sign-in flow via `/mcp`. Tools added to the hosted server appear automatically — no plugin update required.
+- **`synthflow`** — the workspace server. `${user_config.mcp_url}` is the region URL you chose at enable time (declared in `plugin.json` under `userConfig`, defaulting to the Global endpoint). Claude Code detects that the server requires OAuth and handles the sign-in flow via `/mcp`. Tools added to the hosted server appear automatically — no plugin update required.
+- **`synthflow-docs`** — searches the official docs at [docs.synthflow.ai](https://docs.synthflow.ai) via a `searchDocs` tool. No sign-in needed, so Claude can look up Synthflow features and setup steps even before you authenticate.
 
 ## Troubleshooting
 
