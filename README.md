@@ -6,7 +6,7 @@ A Claude Code [plugin marketplace](https://code.claude.com/docs/en/plugin-market
 
 | Plugin | Description |
 |--------|-------------|
-| [`synthflow-mcp`](./plugins/synthflow-mcp) | Connects Claude Code to the Synthflow hosted MCP server for managing AI voice agents, phone numbers, calls, and workflows. |
+| [`synthflow-mcp`](./plugins/synthflow-mcp) | Connects Claude Code to the Synthflow hosted MCP server (OAuth) for managing AI voice agents, phone numbers, calls, and workflows. |
 
 ## Install
 
@@ -24,7 +24,7 @@ For local testing, point at the directory instead:
 /plugin install synthflow-mcp@synthflow
 ```
 
-Each plugin has its own setup steps — see its README. The `synthflow-mcp` plugin requires a `SYNTHFLOW_API_KEY` environment variable ([setup](./plugins/synthflow-mcp#setup)).
+Each plugin has its own setup steps — see its README. The `synthflow-mcp` plugin prompts for your workspace region's MCP URL at enable time and authenticates with OAuth: run `/mcp` and sign in to Synthflow ([setup](./plugins/synthflow-mcp#setup)).
 
 ## Develop
 
