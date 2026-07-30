@@ -13,7 +13,7 @@ Especially useful for Synthflow voice agents, Single-Prompt agents, Flow Designe
 
 ## Getting the material over MCP
 
-When the prompt lives in a Synthflow workspace rather than in the conversation, pull it with the `synthflow` MCP server's tools: `get_agent` for the live prompt and settings, `get_agent_actions` / `get_action` for the action descriptions the prompt must agree with, and `list_agent_versions` / `get_agent_version_diff` when comparing an edit for regression risk. To check how a Synthflow feature actually works, search the official docs with the `searchDocs` tool on the `synthflow-docs` server (no sign-in needed) or `search_docs` on the main server.
+When the prompt lives in a Synthflow workspace rather than in the conversation, pull it with the Synthflow MCP tools: `get_agent` for the live prompt and settings, `get_agent_actions` / `get_action` for the action descriptions the prompt must agree with, and `list_agent_versions` / `get_agent_version_diff` when comparing an edit for regression risk. To check how a Synthflow feature actually works, search the official docs with `search_docs`, or with the `searchDocs` tool on the `synthflow-docs` server if the workspace tools aren't connected yet.
 
 ## Core Review Philosophy
 
