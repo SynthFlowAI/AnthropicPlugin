@@ -9,7 +9,7 @@ description: Review the last 100 calls for an agent and surface problems. Use th
 
 Pull a batch of recent calls for one agent, inspect them, and surface the problems — so issues are caught in review instead of live on customer calls. Default batch size is the **last 100 calls**.
 
-This playbook runs on the `synthflow` MCP server's tools. It does not require any external API or script.
+This playbook runs on the Synthflow MCP tools, whether they come from the plugin's bundled server or the official Synthflow connector. It does not require any external API or script.
 
 ## Tools this uses
 

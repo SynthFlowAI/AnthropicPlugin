@@ -4,14 +4,20 @@ Official Synthflow plugin for Claude Code and Claude Cowork. Manage your AI voic
 
 ## Installation
 
+### claude.ai, Claude Desktop, Claude Cowork
+
+Enable the official **Synthflow connector** from Claude's connector directory and sign in — it handles region selection for you, so there's nothing to configure. Install this plugin alongside it for the bundled [skills](#bundled-skills).
+
 ### Claude Code
+
+If you already use the official connector, install the plugin for its skills and skip step 2 — the connector provides the tools.
 
 1. Add the marketplace and install the plugin:
     ```
     /plugin marketplace add SynthFlowAI/AnthropicPlugin
     /plugin install synthflow@synthflow
     ```
-    The plugin connects to the Global endpoint. If your workspace runs in the US or EU region, see [Regions](#regions).
+    The plugin's bundled server connects to the Global endpoint. If your workspace runs in the US or EU region, see [Regions](#regions).
 
 2. Authenticate via OAuth:
     ```
@@ -21,7 +27,9 @@ Official Synthflow plugin for Claude Code and Claude Cowork. Manage your AI voic
 
 ## Regions
 
-Synthflow runs three regional MCP endpoints. The server URL and your workspace must be in the same region — a mismatch stops the connection from working. Find your region under **Admin → Workspace Settings → Preferences → Customer Region**.
+Synthflow runs three regional MCP endpoints, and the endpoint must match your workspace's region — a mismatch stops the connection from working. Find your region under **Admin → Workspace Settings → Preferences → Customer Region**.
+
+**The official connector handles this during sign-in.** The table below applies to the plugin's bundled server and to servers you add by hand:
 
 | Region | MCP URL |
 |--------|---------|
@@ -29,17 +37,17 @@ Synthflow runs three regional MCP endpoints. The server URL and your workspace m
 | United States | `https://mcp.us.synthflow.ai/mcp` |
 | European Union | `https://mcp.eu.synthflow.ai/mcp` |
 
-The plugin's bundled connector uses the Global endpoint. For a US or EU workspace, add the server with your region's URL instead:
+The bundled server uses the Global endpoint. For a US or EU workspace, either use the official connector, or add the server with your region's URL:
 
 ```bash
 claude mcp add --transport http synthflow https://mcp.eu.synthflow.ai/mcp
 ```
 
-Then authenticate via `/mcp` as usual. You can keep the plugin enabled for its skills — its Global connector will simply show as unauthenticated, which is safe to ignore.
+Then authenticate via `/mcp` as usual. You can keep the plugin enabled for its skills — its Global server will simply show as unauthenticated, which is safe to ignore.
 
 ## Headless / CI
 
-Environments without a browser can connect with a Synthflow API key instead (generate one in **Admin → Workspace Settings → API Keys**):
+The official connector needs an interactive sign-in, so it isn't available in headless, CI, or scheduled runs — use the plugin's bundled server with a Synthflow API key instead (generate one in **Admin → Workspace Settings → API Keys**):
 
 ```bash
 claude mcp add --transport http synthflow https://mcp.synthflow.ai/mcp \
