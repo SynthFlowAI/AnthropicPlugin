@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "synthflow",
   "displayName": "Synthflow",
-  "description": "Connects Claude Code to the Synthflow AI voice-agent platform through its hosted MCP server, with skills for reviewing calls, auditing agent prompts, making safe agent changes, and running regression tests, plus a docs-search connector.",
+  "description": "Connects Claude Code to the Synthflow AI voice-agent platform through its hosted MCP server, with skills for reviewing and reporting on calls, diagnosing failed calls, auditing prompts, making safe agent changes, building actions, and running regression tests, plus a docs-search connector.",
   "version": "1.4.0",
   "author": {
     "name": "Synthflow",

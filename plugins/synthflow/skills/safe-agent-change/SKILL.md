@@ -92,7 +92,7 @@ Publishing succeeding isn't the same as the agent being right. Verify:
 2. `get_agent` — the changed fields hold the new values.
 3. `get_agent_actions` — compare with the Step 1 baseline. **Every action that was attached before is still attached**, with the same trigger condition and input-variable mapping.
 
-If any action went missing, tell the user straight away, and offer either to re-attach it (`attach_action_to_agent` with the baseline mapping) or to roll back.
+If any action went missing, tell the user straight away, and offer either to roll back, or to restore it. To restore it, send `action_bindings` from the Step 1 baseline through another draft → diff → publish loop. `attach_action_to_agent` alone re-attaches the action but doesn't restore its trigger condition or input-variable mapping.
 
 Suggest a test call or simulation to confirm behaviour, especially for prompt and voice changes.
 
