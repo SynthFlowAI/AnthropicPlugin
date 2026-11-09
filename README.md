@@ -47,14 +47,7 @@ Then authenticate via `/mcp` as usual. You can keep the plugin enabled for its s
 
 ## Headless / CI
 
-The official connector needs an interactive sign-in, so it isn't available in headless, CI, or scheduled runs — use the plugin's bundled server with a Synthflow API key instead (generate one in **Admin → Workspace Settings → API Keys**):
-
-```bash
-claude mcp add --transport http synthflow https://mcp.synthflow.ai/mcp \
-  --header "Authorization: Bearer $SYNTHFLOW_API_KEY"
-```
-
-Substitute your region's URL from the table above.
+The official connector and the bundled server both sign in through a browser, so neither works in headless, CI, or scheduled runs. For those, connect to the Synthflow MCP server with an API key as described in [Synthflow's MCP server docs](https://docs.synthflow.ai/mcp-server). That setup is outside this plugin; the plugin's skills still work once the server is connected.
 
 ## Features
 

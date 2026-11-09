@@ -3,7 +3,7 @@
   "name": "synthflow",
   "displayName": "Synthflow",
   "description": "Connects Claude Code to the Synthflow AI voice-agent platform through its hosted MCP server, with skills for reviewing and reporting on calls, diagnosing failed calls, auditing prompts, making safe agent changes, building actions, and running regression tests, plus a docs-search connector.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "author": {
     "name": "Synthflow",
     "email": "fionn@synthflow.ai"
@@ -11,5 +11,17 @@
   "homepage": "https://docs.synthflow.ai/anthropic",
   "repository": "https://github.com/SynthFlowAI/AnthropicPlugin",
   "license": "MIT",
-  "keywords": ["synthflow", "mcp", "voice", "ai-agents", "telephony", "integration"]
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://docs.synthflow.ai/anthropic",
+  "supportUrl": "https://synthflow.portal.usepylon.com/forms/bug-report",
+  "privacyPolicyUrl": "https://docs.synthflow.ai/privacy-policy",
+  "termsOfServiceUrl": "https://docs.synthflow.ai/terms-conditions",
+  "keywords": [
+    "synthflow",
+    "mcp",
+    "voice",
+    "ai-agents",
+    "telephony",
+    "integration"
+  ]
 }
