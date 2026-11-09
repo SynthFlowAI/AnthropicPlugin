@@ -22,6 +22,11 @@ If you use the connector, keep this plugin installed anyway — the skills below
 |-------|--------------|
 | `call-review` | Audits the last 100 calls for an agent against a problem checklist (unresolved outcomes, repetition, dropout, compliance risks) and reports flagged calls with evidence. |
 | `prompt-review` | Reviews a voice-agent prompt before deployment: contradictions, missing context, tool/action alignment, escalation gaps, compliance risk, and regression risk. |
+| `safe-agent-change` | Changes a live agent through baseline → draft → diff → approval → publish → verify, preserving attached actions, with a guided rollback. |
+| `regression-test` | Builds and runs simulated-caller test suites against an agent and reports pass/fail per case with transcript evidence, separating agent failures from bad test cases. |
+| `call-report` | Builds call-volume and outcome reports for an agent, workspace, or agency: statuses, durations, call reasons from extractors, transfer and booking results, and trends, with every percentage shown against its count. |
+| `build-action` | Creates, tests, and attaches actions (custom HTTP, extractors, transfers, SMS, booking, email) using the exact MCP field shapes, with secrets kept out of chat. |
+| `diagnose-call` | Investigates why a specific call went wrong (transfer, cut-off, silence, failed action or webhook) and labels each cause as confirmed, likely, or not determinable from the available data. |
 
 Claude invokes these automatically when the task fits; you can also run them explicitly, e.g. `/synthflow:call-review`.
 
