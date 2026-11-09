@@ -22,6 +22,8 @@ If you use the connector, keep this plugin installed anyway — the skills below
 |-------|--------------|
 | `call-review` | Audits the last 100 calls for an agent against a problem checklist (unresolved outcomes, repetition, dropout, compliance risks) and reports flagged calls with evidence. |
 | `prompt-review` | Reviews a voice-agent prompt before deployment: contradictions, missing context, tool/action alignment, escalation gaps, compliance risk, and regression risk. |
+| `safe-agent-change` | Changes a live agent through baseline → draft → diff → approval → publish → verify, preserving attached actions, with a guided rollback. |
+| `regression-test` | Builds and runs simulated-caller test suites against an agent and reports pass/fail per case with transcript evidence, separating agent failures from bad test cases. |
 
 Claude invokes these automatically when the task fits; you can also run them explicitly, e.g. `/synthflow:call-review`.
 

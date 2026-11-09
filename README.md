@@ -75,8 +75,10 @@ The plugin also ships task-specific skills that Claude loads on demand to follow
 
 - **call-review** — audits an agent's recent calls against a problem checklist (unresolved outcomes, repetition, dropout, compliance risks) and reports flagged calls with transcript evidence.
 - **prompt-review** — reviews a voice-agent prompt before deployment: contradictions, missing context, tool/action alignment, escalation gaps, compliance risk, and regression risk.
+- **safe-agent-change** — changes a live agent safely: records a baseline, saves a draft, reviews the diff, publishes only on approval, then verifies attached actions survived, with a guided rollback.
+- **regression-test** — builds and runs simulated-caller test suites against an agent and reports pass/fail per case with transcript evidence.
 
-Skills activate automatically when their description matches your request (e.g. "review my calls", "audit this prompt before I publish"), so you generally don't need to invoke them by name.
+Skills activate automatically when their description matches your request (e.g. "review my calls", "audit this prompt before I publish", "update the prompt and publish it", "test the agent"), so you generally don't need to invoke them by name.
 
 ## Example usage
 
